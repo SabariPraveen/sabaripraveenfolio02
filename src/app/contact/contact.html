@@ -1,0 +1,49 @@
+<!-- Toast -->
+<div class="toast-wrap" *ngIf="toast" [class.toast-success]="toast.type==='success'" [class.toast-error]="toast.type==='error'">
+  <span>{{ toast.type === 'success' ? '✓' : '✕' }}</span> {{ toast.msg }}
+</div>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow">Contact</div>
+    <h2 class="section-title">Let's work together</h2>
+    <p class="section-sub">Open to full-time roles, freelance projects, and interesting conversations.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a href="mailto:ar.sabaripraveen@gmail.com" class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div><div class="contact-detail-label">Email</div><div class="contact-detail-val">ar.sabaripraveen@gmail.com</div></div>
+        </a>
+        <a href="https://linkedin.com/in/arulrajsabaripraveen" target="_blank" class="contact-item">
+          <div class="contact-icon">💼</div>
+          <div><div class="contact-detail-label">LinkedIn</div><div class="contact-detail-val">linkedin.com/in/arulrajsabaripraveen</div></div>
+        </a>
+        <a href="https://github.com/sabaripraveen" target="_blank" class="contact-item">
+          <div class="contact-icon">🐙</div>
+          <div><div class="contact-detail-label">GitHub</div><div class="contact-detail-val">github.com/sabaripraveen</div></div>
+        </a>
+        <div class="contact-item" style="pointer-events:none;">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-detail-label">Location</div><div class="contact-detail-val">Chennai, India · Open to Remote</div></div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input class="form-input" type="text" placeholder="Jane Smith" [(ngModel)]="name" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input class="form-input" type="email" placeholder="jane@company.com" [(ngModel)]="email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell me about your project..." [(ngModel)]="message"></textarea>
+        </div>
+        <button class="btn-primary" (click)="submit()">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>

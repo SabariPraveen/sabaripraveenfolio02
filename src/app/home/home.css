@@ -1,0 +1,123 @@
+#hero {
+  min-height: 100vh; display: flex;
+  align-items: center; justify-content: center;
+  padding: 120px 60px 80px;
+  position: relative; z-index: 1;
+}
+.hero-inner {
+  max-width: 1100px; width: 100%;
+  display: grid; grid-template-columns: 1fr 380px;
+  gap: 80px; align-items: center;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+  color: var(--accent2); background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.2);
+  padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 28px; letter-spacing: 0.5px;
+}
+.hero-tag::before { content: '●'; font-size: 0.5rem; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 800; line-height: 1.08;
+  letter-spacing: -2px; margin-bottom: 24px;
+}
+.name-accent { color: var(--accent); }
+.role-line {
+  display: block; font-size: clamp(1.5rem,2.5vw,2rem);
+  font-weight: 400; color: var(--muted);
+  letter-spacing: -0.5px; margin-top: 8px; min-height: 2.5rem;
+}
+.cursor-blink { animation: blink 1s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.hero-desc {
+  color: var(--muted); font-size: 1rem;
+  line-height: 1.8; max-width: 520px; margin-bottom: 44px;
+}
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn-primary {
+  padding: 14px 32px; border-radius: 10px;
+  background: var(--accent); color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; font-size: 0.95rem;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: #7c75ff; box-shadow: 0 0 30px var(--glow); transform: translateY(-2px); }
+
+.btn-outline {
+  padding: 14px 32px; border-radius: 10px;
+  background: transparent; color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; font-size: 0.95rem;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid var(--border); transition: all 0.25s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+.hero-stats {
+  display: flex; gap: 32px;
+  margin-top: 56px; padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2rem; line-height: 1; }
+.stat-num span { color: var(--accent); }
+.stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+.hero-avatar-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
+.avatar-glow {
+  position: absolute; width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(108,99,255,0.3) 0%, transparent 70%);
+  border-radius: 50%; animation: breathe 4s ease-in-out infinite;
+}
+@keyframes breathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+
+.avatar-card {
+  position: relative; z-index: 2;
+  width: 280px; height: 320px; border-radius: 24px;
+  border: 1px solid var(--border); background: var(--card);
+  backdrop-filter: blur(16px); overflow: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 16px; padding: 32px;
+}
+.avatar-initials {
+  width: 100px; height: 100px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 2.2rem; color: #fff; letter-spacing: -1px;
+}
+.avatar-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; text-align: center; }
+.avatar-role { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--accent2); text-align: center; }
+.avatar-badges { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 4px; }
+.badge {
+  font-size: 0.68rem; font-weight: 500; padding: 4px 10px;
+  border-radius: 100px; background: rgba(108,99,255,0.15);
+  border: 1px solid rgba(108,99,255,0.25); color: var(--accent);
+}
+.float-card {
+  position: absolute; background: var(--card);
+  border: 1px solid var(--border); backdrop-filter: blur(16px);
+  border-radius: 12px; padding: 12px 16px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.8rem; font-weight: 500;
+  animation: float 3s ease-in-out infinite; z-index: 3; white-space: nowrap;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.float-icon { font-size: 1.2rem; }
+.float-label { color: var(--muted); font-size: 0.72rem; }
+
+@media (max-width: 900px) {
+  #hero { padding: 100px 24px 60px; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-avatar-wrap { display: none; }
+  .hero-stats { gap: 20px; }
+}

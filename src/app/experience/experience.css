@@ -1,0 +1,21 @@
+#experience { background: var(--bg2); padding: 100px 60px; position: relative; z-index: 1; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+.section-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2rem,3.5vw,2.8rem); letter-spacing: -1px; margin-bottom: 16px; }
+.section-sub { color: var(--muted); font-size: 1rem; max-width: 520px; margin-bottom: 60px; line-height: 1.8; }
+
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--accent), transparent); }
+.tl-item { position: relative; margin-bottom: 48px; opacity: 0; transform: translateX(-20px); transition: opacity 0.5s, transform 0.5s; }
+.tl-item.visible { opacity: 1; transform: translateX(0); }
+.tl-dot { position: absolute; left: -29px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg2); box-shadow: 0 0 12px var(--glow); }
+.tl-date { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent2); letter-spacing: 0.5px; margin-bottom: 8px; }
+.tl-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 4px; }
+.tl-company { color: var(--muted); font-size: 0.9rem; margin-bottom: 14px; }
+.tl-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.8; }
+.tl-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tl-tag { font-size: 0.72rem; font-weight: 500; padding: 4px 12px; border-radius: 100px; border: 1px solid var(--border); color: var(--muted); background: var(--bg3); }
+
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 900px) { #experience { padding: 70px 24px; } }

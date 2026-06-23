@@ -1,0 +1,13 @@
+<nav id="navbar" [class.scrolled]="scrolled">
+  <a routerLink="/" class="nav-logo" (click)="closeMenu()">SabariPraveen<span>.</span>A</a>
+  <ul class="nav-links" [class.open]="menuOpen">
+    <li><a routerLink="/about"      routerLinkActive="active" (click)="closeMenu()">About</a></li>
+    <li><a routerLink="/skills"     routerLinkActive="active" (click)="closeMenu()">Skills</a></li>
+    <li><a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">Experience</a></li>
+    <li><a routerLink="/projects"   routerLinkActive="active" (click)="closeMenu()">Projects</a></li>
+    <li><a routerLink="/contact" class="nav-cta" (click)="closeMenu()">Contact Me</a></li>
+  </ul>
+  <button class="hamburger" [class.open]="menuOpen" (click)="toggleMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>

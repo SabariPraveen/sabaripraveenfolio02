@@ -1,0 +1,24 @@
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-eyebrow">Projects</div>
+    <h2 class="section-title">Things I've built</h2>
+    <p class="section-sub">A mix of enterprise work and personal experiments.</p>
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let p of projects">
+        <div class="project-header">
+          <div class="project-icon">{{ p.icon }}</div>
+          <div class="project-links">
+            <span class="project-link" *ngIf="p.locked" title="Enterprise Project">🔒</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-name">{{ p.name }}</div>
+          <div class="project-desc">{{ p.desc }}</div>
+          <div class="project-stack">
+            <span class="project-tech" *ngFor="let t of p.stack">{{ t }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

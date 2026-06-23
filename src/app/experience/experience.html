@@ -1,0 +1,21 @@
+<section id="experience">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">Experience</div>
+      <h2 class="section-title">Where I've worked</h2>
+      <p class="section-sub">Building enterprise solutions that matter in the real world.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item" *ngFor="let exp of experiences">
+        <div class="tl-dot"></div>
+        <div class="tl-date">{{ exp.date }}</div>
+        <div class="tl-role">{{ exp.role }}</div>
+        <div class="tl-company">{{ exp.company }}</div>
+        <div class="tl-desc">{{ exp.desc }}</div>
+        <div class="tl-tags">
+          <span class="tl-tag" *ngFor="let tag of exp.tags">{{ tag }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

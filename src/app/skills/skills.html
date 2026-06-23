@@ -1,0 +1,28 @@
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-eyebrow">Technical Skills</div>
+    <h2 class="section-title">The stack I work with</h2>
+    <p class="section-sub">A curated toolkit refined through real-world enterprise projects.</p>
+
+    <div class="skills-tabs">
+      <button
+        *ngFor="let tab of tabs"
+        class="tab-btn"
+        [class.active]="activeTab === tab"
+        (click)="activeTab = tab">
+        {{ tab | titlecase }}
+      </button>
+    </div>
+
+    <div class="skills-panel">
+      <div class="skill-chip" *ngFor="let s of skills[activeTab]">
+        <div class="skill-chip-icon">{{ s.icon }}</div>
+        <div class="skill-chip-name">{{ s.name }}</div>
+        <div class="skill-chip-level">{{ s.level }}</div>
+        <div class="skill-bar">
+          <div class="skill-bar-fill" [style.width.%]="s.pct"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
